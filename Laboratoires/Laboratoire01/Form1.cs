@@ -1,8 +1,8 @@
 namespace Laboratoire01
 {
-    public partial class Form1 : Form
+    public partial class frmLab : Form
     {
-        public Form1()
+        public frmLab()
         {
             InitializeComponent();
         }
