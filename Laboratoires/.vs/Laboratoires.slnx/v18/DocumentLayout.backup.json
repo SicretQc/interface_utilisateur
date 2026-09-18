@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{D229A9E4-61CC-2325-6F80-62F9C42DD19E}|Laboratoire01\\Laboratoire01.csproj|c:\\users\\charl\\interface_utilisateur\\laboratoires\\laboratoire01\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D229A9E4-61CC-2325-6F80-62F9C42DD19E}|Laboratoire01\\Laboratoire01.csproj|solutionrelative:laboratoire01\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D229A9E4-61CC-2325-6F80-62F9C42DD19E}|Laboratoire01\\Laboratoire01.csproj|c:\\users\\charl\\interface_utilisateur\\laboratoires\\laboratoire01\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D229A9E4-61CC-2325-6F80-62F9C42DD19E}|Laboratoire01\\Laboratoire01.csproj|solutionrelative:laboratoire01\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
+              "Title": "Form1.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\charl\\interface_utilisateur\\Laboratoires\\Laboratoire01\\Form1.cs",
               "RelativeDocumentMoniker": "Laboratoire01\\Form1.cs",
-              "ToolTip": "C:\\Users\\charl\\interface_utilisateur\\Laboratoires\\Laboratoire01\\Form1.cs [Design]",
-              "RelativeToolTip": "Laboratoire01\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\charl\\interface_utilisateur\\Laboratoires\\Laboratoire01\\Form1.cs [Conception]",
+              "RelativeToolTip": "Laboratoire01\\Form1.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-11T19:27:29.504Z",
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\charl\\interface_utilisateur\\Laboratoires\\Laboratoire01\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Laboratoire01\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\charl\\interface_utilisateur\\Laboratoires\\Laboratoire01\\Form1.Designer.cs",
+              "RelativeToolTip": "Laboratoire01\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-11T19:42:20.073Z",
+              "EditorCaption": ""
             }
           ]
         }
