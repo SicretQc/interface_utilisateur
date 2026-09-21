@@ -1,8 +1,8 @@
 namespace Travail_Pratique_1
 {
-    public partial class Form1 : Form
+    public partial class frm_Ecran : Form
     {
-        public Form1()
+        public frm_Ecran()
         {
             InitializeComponent();
         }
