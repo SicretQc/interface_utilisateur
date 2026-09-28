@@ -48,8 +48,7 @@ namespace Travail_Pratique_1
             Notes = notes;
         }
 
-        override
-        public string ToString()
+        public override string ToString()
         {
             return "NumInscription:" + NumInscription + "\nNumEtudiant: " + NumEtudiant + "\nNumCours: " + NumCours;
         }

@@ -39,12 +39,12 @@
             lbl_Gestion = new Label();
             pbx_Ecole = new PictureBox();
             tbp_Etudiant = new TabPage();
-            tbp_Cahier = new TabPage();
-            tbx_Prenom_Etudiant = new TextBox();
-            tbx_Nom_Etudiant = new TextBox();
-            dtx_Date_Naissance = new DateTimePicker();
-            tbx_Code_Permanent = new TextBox();
             tbx_age = new TextBox();
+            tbx_Code_Permanent = new TextBox();
+            dtx_Date_Naissance = new DateTimePicker();
+            tbx_Nom_Etudiant = new TextBox();
+            tbx_Prenom_Etudiant = new TextBox();
+            tbp_Cahier = new TabPage();
             tcl_Menu.SuspendLayout();
             tbp_Cours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbx_Ecole).BeginInit();
@@ -159,6 +159,46 @@
             tbp_Etudiant.Text = "Étudiant";
             tbp_Etudiant.UseVisualStyleBackColor = true;
             // 
+            // tbx_age
+            // 
+            tbx_age.Location = new Point(26, 81);
+            tbx_age.Name = "tbx_age";
+            tbx_age.Size = new Size(100, 23);
+            tbx_age.TabIndex = 4;
+            // 
+            // tbx_Code_Permanent
+            // 
+            tbx_Code_Permanent.Enabled = false;
+            tbx_Code_Permanent.Location = new Point(27, 34);
+            tbx_Code_Permanent.Name = "tbx_Code_Permanent";
+            tbx_Code_Permanent.Size = new Size(100, 23);
+            tbx_Code_Permanent.TabIndex = 3;
+            tbx_Code_Permanent.Text = "XXXX999999";
+            // 
+            // dtx_Date_Naissance
+            // 
+            dtx_Date_Naissance.Location = new Point(151, 81);
+            dtx_Date_Naissance.Name = "dtx_Date_Naissance";
+            dtx_Date_Naissance.Size = new Size(200, 23);
+            dtx_Date_Naissance.TabIndex = 2;
+            dtx_Date_Naissance.ValueChanged += dtx_Date_Naissance_ValueChanged;
+            // 
+            // tbx_Nom_Etudiant
+            // 
+            tbx_Nom_Etudiant.Location = new Point(151, 52);
+            tbx_Nom_Etudiant.Name = "tbx_Nom_Etudiant";
+            tbx_Nom_Etudiant.Size = new Size(100, 23);
+            tbx_Nom_Etudiant.TabIndex = 1;
+            tbx_Nom_Etudiant.TextChanged += tbx_Nom_Etudiant_TextChanged;
+            // 
+            // tbx_Prenom_Etudiant
+            // 
+            tbx_Prenom_Etudiant.Location = new Point(151, 23);
+            tbx_Prenom_Etudiant.Name = "tbx_Prenom_Etudiant";
+            tbx_Prenom_Etudiant.Size = new Size(100, 23);
+            tbx_Prenom_Etudiant.TabIndex = 0;
+            tbx_Prenom_Etudiant.TextChanged += tbx_Prenom_Etudiant_TextChanged;
+            // 
             // tbp_Cahier
             // 
             tbp_Cahier.Location = new Point(4, 24);
@@ -168,41 +208,6 @@
             tbp_Cahier.TabIndex = 2;
             tbp_Cahier.Text = "Cahier de notes";
             tbp_Cahier.UseVisualStyleBackColor = true;
-            // 
-            // tbx_Prenom_Etudiant
-            // 
-            tbx_Prenom_Etudiant.Location = new Point(151, 23);
-            tbx_Prenom_Etudiant.Name = "tbx_Prenom_Etudiant";
-            tbx_Prenom_Etudiant.Size = new Size(100, 23);
-            tbx_Prenom_Etudiant.TabIndex = 0;
-            // 
-            // tbx_Nom_Etudiant
-            // 
-            tbx_Nom_Etudiant.Location = new Point(151, 52);
-            tbx_Nom_Etudiant.Name = "tbx_Nom_Etudiant";
-            tbx_Nom_Etudiant.Size = new Size(100, 23);
-            tbx_Nom_Etudiant.TabIndex = 1;
-            // 
-            // dtx_Date_Naissance
-            // 
-            dtx_Date_Naissance.Location = new Point(151, 81);
-            dtx_Date_Naissance.Name = "dtx_Date_Naissance";
-            dtx_Date_Naissance.Size = new Size(200, 23);
-            dtx_Date_Naissance.TabIndex = 2;
-            // 
-            // tbx_Code_Permanent
-            // 
-            tbx_Code_Permanent.Location = new Point(27, 34);
-            tbx_Code_Permanent.Name = "tbx_Code_Permanent";
-            tbx_Code_Permanent.Size = new Size(100, 23);
-            tbx_Code_Permanent.TabIndex = 3;
-            // 
-            // tbx_age
-            // 
-            tbx_age.Location = new Point(26, 81);
-            tbx_age.Name = "tbx_age";
-            tbx_age.Size = new Size(100, 23);
-            tbx_age.TabIndex = 4;
             // 
             // frm_Ecran
             // 
