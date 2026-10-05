@@ -1,24 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Travail_Pratique_1
 {
     internal class Etudiant
     {
-        private static int compteur = 0;
+        public const int MAX_ETUDIANT = 10;
 
-        private int NumEtudiant;
+        public static int numEtudiant;
         private string Prenom;
         private string Nom;
         private string DateNaissance;
         private string CodePermanent;
         private int age;
 
-        public int numEtudiant
+        public int getNombreEtudiant()
         {
-            get { return NumEtudiant; }
-            set { NumEtudiant = value; }
+            return numEtudiant;
         }
 
         public string prenom
@@ -64,7 +62,7 @@ namespace Travail_Pratique_1
 
         public Etudiant()
         {
-            this.numEtudiant = compteur++;
+            numEtudiant++;
             this.Prenom = "";
             this.Nom = "";
             this.DateNaissance = "";
@@ -73,7 +71,7 @@ namespace Travail_Pratique_1
 
         public Etudiant(int numEtudiant, string prenom, string nom, string dateNaissance, string codePermanent)
         {
-            this.NumEtudiant = numEtudiant;
+            numEtudiant++;
             this.Prenom = prenom;
             this.Nom = nom;
             this.DateNaissance = dateNaissance;
@@ -91,7 +89,7 @@ namespace Travail_Pratique_1
         override
         public string ToString()
         {
-            return "Numéro d'étudiant:" + NumEtudiant + "\nPrénom: " + Prenom + "\nNom: " + Nom + "\nDate de naissance: " + DateNaissance + "\nCode permanent: " + CodePermanent + "\nÂge: " + Age;
+            return "Numéro d'étudiant:" + numEtudiant + "\nPrénom: " + Prenom + "\nNom: " + Nom + "\nDate de naissance: " + DateNaissance + "\nCode permanent: " + CodePermanent + "\nÂge: " + Age;
         }
     }
 }

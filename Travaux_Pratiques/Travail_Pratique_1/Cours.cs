@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Travail_Pratique_1
 {
     internal class Cours
     {
-        private static int compteur = 0;
+        private static int NumCours = 0;
 
-        private int NumCours;
         private string CodeCours;
         private string Nom;
         private string[] Evaluations;
         private Inscription[] Inscriptions;
         private int NombreEtudiants;
 
-        public int numCours
-        {
-            get { return NumCours; }
-            set { NumCours = value; }
-        }
         public string codeCours
         {
             get { return CodeCours; }
@@ -30,11 +23,13 @@ namespace Travail_Pratique_1
             get { return Nom; }
             set { Nom = value; }
         }
+
         public string[] evaluations
         {
             get { return Evaluations; }
             set { Evaluations = value; }
         }
+
         public Inscription[] inscriptions
         {
             get { return Inscriptions; }
@@ -43,22 +38,20 @@ namespace Travail_Pratique_1
 
         public Cours()
         {
-            compteur++;
-            NumCours = compteur;
+            NumCours++;
             CodeCours = "";
             Nom = "";
-            Evaluations = new string[0];
+            Evaluations = new string[5];
             Inscriptions = new Inscription[0];
             NombreEtudiants = 0;
         }
 
-        public Cours(string codeCours, string nom, string[] evaluations)
+        public Cours(string codeCours, string nom)
         {
-            compteur++;
-            NumCours = compteur;
+            NumCours++;
             CodeCours = codeCours;
             Nom = nom;
-            Evaluations = evaluations;
+            Evaluations = new string[5];
             Inscriptions = new Inscription[0];
             NombreEtudiants = 0;
         }
@@ -66,7 +59,7 @@ namespace Travail_Pratique_1
         override
         public string ToString()
         {
-            return "CodeCours:" + CodeCours + "\nNom:" + Nom;
+            return CodeCours + " - " + Nom;
         }
     }
 }

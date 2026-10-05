@@ -46,62 +46,62 @@
             lbl_Gestion = new Label();
             pbx_Ecole = new PictureBox();
             tbp_Etudiant = new TabPage();
+            tbx_CoursEtu5 = new TextBox();
+            tbx_CoursEtu4 = new TextBox();
+            tbx_CoursEtu3 = new TextBox();
+            tbx_CoursEtu2 = new TextBox();
+            tbx_CoursEtu1 = new TextBox();
+            Résultats = new Label();
+            nud_Cours5 = new NumericUpDown();
+            nud_Cours4 = new NumericUpDown();
+            nud_Cours3 = new NumericUpDown();
+            nud_Cours2 = new NumericUpDown();
+            nud_Cours1 = new NumericUpDown();
+            lbl_DateNaissance = new Label();
+            lbl_Nom = new Label();
+            lbl_Prenom = new Label();
+            pbx_Eleve = new PictureBox();
+            lbl_CodePermanent = new Label();
+            lbl_Age = new Label();
+            btn_Sauvegarder = new Button();
+            btn_Effacer = new Button();
             tbx_age = new TextBox();
             tbx_Code_Permanent = new TextBox();
             dtx_Date_Naissance = new DateTimePicker();
             tbx_Nom_Etudiant = new TextBox();
             tbx_Prenom_Etudiant = new TextBox();
             tbp_Cahier = new TabPage();
-            btn_Effacer = new Button();
-            btn_Sauvegarder = new Button();
-            lbl_Age = new Label();
-            lbl_CodePermanent = new Label();
-            pbx_Eleve = new PictureBox();
-            lbl_Prenom = new Label();
-            lbl_Nom = new Label();
-            lbl_DateNaissance = new Label();
-            nud_Cours1 = new NumericUpDown();
-            nud_Cours2 = new NumericUpDown();
-            nud_Cours3 = new NumericUpDown();
-            nud_Cours4 = new NumericUpDown();
-            nud_Cours5 = new NumericUpDown();
-            Résultats = new Label();
-            tbx_CoursEtu1 = new TextBox();
-            tbx_CoursEtu2 = new TextBox();
-            tbx_CoursEtu3 = new TextBox();
-            tbx_CoursEtu4 = new TextBox();
-            tbx_CoursEtu5 = new TextBox();
-            rtb_Note1 = new RichTextBox();
-            rtb_Note2 = new RichTextBox();
-            rtb_Note3 = new RichTextBox();
-            rtb_Note4 = new RichTextBox();
-            rtb_Note5 = new RichTextBox();
-            lbl_Note = new Label();
-            lbl_ResultatCahier = new Label();
-            lbl_NoteFinale = new Label();
-            rtb_Finale = new RichTextBox();
+            lbl_Echec_Reussi = new Label();
+            btn_SupprimerEtu = new Button();
+            lbx_Eleves = new ListBox();
+            pbx_Cahier = new PictureBox();
+            rtb_Moyenne = new RichTextBox();
+            lbl_Moyenne = new Label();
             tbx_EvalCahier5 = new TextBox();
             tbx_EvalCahier4 = new TextBox();
             tbx_EvalCahier3 = new TextBox();
             tbx_EvalCahier2 = new TextBox();
             tbx_EvalCahier1 = new TextBox();
-            lbl_Moyenne = new Label();
-            rtb_Moyenne = new RichTextBox();
-            pbx_Cahier = new PictureBox();
-            lbx_Eleves = new ListBox();
-            btn_SupprimerEtu = new Button();
-            lbl_Echec_Reussi = new Label();
+            rtb_Finale = new RichTextBox();
+            lbl_NoteFinale = new Label();
+            lbl_ResultatCahier = new Label();
+            lbl_Note = new Label();
+            rtb_Note5 = new RichTextBox();
+            rtb_Note4 = new RichTextBox();
+            rtb_Note3 = new RichTextBox();
+            rtb_Note2 = new RichTextBox();
+            rtb_Note1 = new RichTextBox();
             tcl_Menu.SuspendLayout();
             tbp_Cours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbx_Ecole).BeginInit();
             tbp_Etudiant.SuspendLayout();
-            tbp_Cahier.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbx_Eleve).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nud_Cours5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbx_Eleve).BeginInit();
+            tbp_Cahier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbx_Cahier).BeginInit();
             SuspendLayout();
             // 
@@ -117,11 +117,11 @@
             // cbx_Choix_Cours
             // 
             cbx_Choix_Cours.FormattingEnabled = true;
-            cbx_Choix_Cours.Items.AddRange(new object[] { "420-3D4-Interface utilisateur", "420-3E5-Interface Web" });
             cbx_Choix_Cours.Location = new Point(355, 12);
             cbx_Choix_Cours.Name = "cbx_Choix_Cours";
-            cbx_Choix_Cours.Size = new Size(121, 23);
+            cbx_Choix_Cours.Size = new Size(273, 23);
             cbx_Choix_Cours.TabIndex = 2;
+            cbx_Choix_Cours.SelectedIndexChanged += cbx_Choix_Cours_SelectedIndexChanged;
             // 
             // lbl_Nb_Etudiants
             // 
@@ -134,10 +134,12 @@
             // 
             // tbx_Nb_Etudiants
             // 
+            tbx_Nb_Etudiants.Enabled = false;
             tbx_Nb_Etudiants.Location = new Point(194, 366);
             tbx_Nb_Etudiants.Name = "tbx_Nb_Etudiants";
             tbx_Nb_Etudiants.Size = new Size(100, 23);
             tbx_Nb_Etudiants.TabIndex = 4;
+            tbx_Nb_Etudiants.TextAlign = HorizontalAlignment.Center;
             // 
             // btn_Quitter
             // 
@@ -147,6 +149,7 @@
             btn_Quitter.TabIndex = 5;
             btn_Quitter.Text = "Quitter";
             btn_Quitter.UseVisualStyleBackColor = true;
+            btn_Quitter.Click += btn_Quitter_Click;
             // 
             // tcl_Menu
             // 
@@ -187,6 +190,7 @@
             btn_Valider.TabIndex = 9;
             btn_Valider.Text = "Valider";
             btn_Valider.UseVisualStyleBackColor = true;
+            btn_Valider.Click += btn_Valider_Click;
             // 
             // btn_Modifier
             // 
@@ -196,9 +200,11 @@
             btn_Modifier.TabIndex = 8;
             btn_Modifier.Text = "Modifier";
             btn_Modifier.UseVisualStyleBackColor = true;
+            btn_Modifier.Click += btn_Modifier_Click;
             // 
             // tbx_Eval5
             // 
+            tbx_Eval5.Enabled = false;
             tbx_Eval5.Location = new Point(412, 160);
             tbx_Eval5.Name = "tbx_Eval5";
             tbx_Eval5.Size = new Size(100, 23);
@@ -206,6 +212,7 @@
             // 
             // tbx_Eval4
             // 
+            tbx_Eval4.Enabled = false;
             tbx_Eval4.Location = new Point(410, 131);
             tbx_Eval4.Name = "tbx_Eval4";
             tbx_Eval4.Size = new Size(100, 23);
@@ -213,6 +220,7 @@
             // 
             // tbx_Eval3
             // 
+            tbx_Eval3.Enabled = false;
             tbx_Eval3.Location = new Point(410, 102);
             tbx_Eval3.Name = "tbx_Eval3";
             tbx_Eval3.Size = new Size(100, 23);
@@ -220,6 +228,7 @@
             // 
             // tbx_Eval2
             // 
+            tbx_Eval2.Enabled = false;
             tbx_Eval2.Location = new Point(410, 73);
             tbx_Eval2.Name = "tbx_Eval2";
             tbx_Eval2.Size = new Size(100, 23);
@@ -227,7 +236,8 @@
             // 
             // tbx_Eval1
             // 
-            tbx_Eval1.Location = new Point(412, 44);
+            tbx_Eval1.Enabled = false;
+            tbx_Eval1.Location = new Point(410, 44);
             tbx_Eval1.Name = "tbx_Eval1";
             tbx_Eval1.Size = new Size(100, 23);
             tbx_Eval1.TabIndex = 3;
@@ -243,12 +253,12 @@
             // 
             // lbl_Gestion
             // 
-            lbl_Gestion.AutoSize = true;
-            lbl_Gestion.Location = new Point(18, 88);
+            lbl_Gestion.Location = new Point(18, 113);
             lbl_Gestion.Name = "lbl_Gestion";
-            lbl_Gestion.Size = new Size(309, 15);
+            lbl_Gestion.Size = new Size(184, 70);
             lbl_Gestion.TabIndex = 1;
             lbl_Gestion.Text = " Gestion des évaluations pour le cours [cours sélectionné]";
+            lbl_Gestion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pbx_Ecole
             // 
@@ -291,6 +301,156 @@
             tbp_Etudiant.TabIndex = 1;
             tbp_Etudiant.Text = "Étudiant";
             tbp_Etudiant.UseVisualStyleBackColor = true;
+            // 
+            // tbx_CoursEtu5
+            // 
+            tbx_CoursEtu5.Location = new Point(331, 161);
+            tbx_CoursEtu5.Name = "tbx_CoursEtu5";
+            tbx_CoursEtu5.Size = new Size(100, 23);
+            tbx_CoursEtu5.TabIndex = 23;
+            // 
+            // tbx_CoursEtu4
+            // 
+            tbx_CoursEtu4.Location = new Point(331, 132);
+            tbx_CoursEtu4.Name = "tbx_CoursEtu4";
+            tbx_CoursEtu4.Size = new Size(100, 23);
+            tbx_CoursEtu4.TabIndex = 22;
+            // 
+            // tbx_CoursEtu3
+            // 
+            tbx_CoursEtu3.Location = new Point(331, 103);
+            tbx_CoursEtu3.Name = "tbx_CoursEtu3";
+            tbx_CoursEtu3.Size = new Size(100, 23);
+            tbx_CoursEtu3.TabIndex = 21;
+            // 
+            // tbx_CoursEtu2
+            // 
+            tbx_CoursEtu2.Location = new Point(331, 73);
+            tbx_CoursEtu2.Name = "tbx_CoursEtu2";
+            tbx_CoursEtu2.Size = new Size(100, 23);
+            tbx_CoursEtu2.TabIndex = 20;
+            // 
+            // tbx_CoursEtu1
+            // 
+            tbx_CoursEtu1.Location = new Point(331, 31);
+            tbx_CoursEtu1.Name = "tbx_CoursEtu1";
+            tbx_CoursEtu1.Size = new Size(100, 23);
+            tbx_CoursEtu1.TabIndex = 19;
+            // 
+            // Résultats
+            // 
+            Résultats.AutoSize = true;
+            Résultats.Location = new Point(361, 13);
+            Résultats.Name = "Résultats";
+            Résultats.Size = new Size(54, 15);
+            Résultats.TabIndex = 18;
+            Résultats.Text = "Résultats";
+            // 
+            // nud_Cours5
+            // 
+            nud_Cours5.Location = new Point(451, 161);
+            nud_Cours5.Name = "nud_Cours5";
+            nud_Cours5.Size = new Size(82, 23);
+            nud_Cours5.TabIndex = 17;
+            // 
+            // nud_Cours4
+            // 
+            nud_Cours4.Location = new Point(451, 133);
+            nud_Cours4.Name = "nud_Cours4";
+            nud_Cours4.Size = new Size(82, 23);
+            nud_Cours4.TabIndex = 16;
+            // 
+            // nud_Cours3
+            // 
+            nud_Cours3.Location = new Point(451, 103);
+            nud_Cours3.Name = "nud_Cours3";
+            nud_Cours3.Size = new Size(82, 23);
+            nud_Cours3.TabIndex = 15;
+            // 
+            // nud_Cours2
+            // 
+            nud_Cours2.Location = new Point(451, 73);
+            nud_Cours2.Name = "nud_Cours2";
+            nud_Cours2.Size = new Size(82, 23);
+            nud_Cours2.TabIndex = 14;
+            // 
+            // nud_Cours1
+            // 
+            nud_Cours1.Location = new Point(451, 31);
+            nud_Cours1.Name = "nud_Cours1";
+            nud_Cours1.Size = new Size(82, 23);
+            nud_Cours1.TabIndex = 13;
+            // 
+            // lbl_DateNaissance
+            // 
+            lbl_DateNaissance.AutoSize = true;
+            lbl_DateNaissance.Location = new Point(153, 128);
+            lbl_DateNaissance.Name = "lbl_DateNaissance";
+            lbl_DateNaissance.Size = new Size(101, 15);
+            lbl_DateNaissance.TabIndex = 12;
+            lbl_DateNaissance.Text = "Date de naissance";
+            // 
+            // lbl_Nom
+            // 
+            lbl_Nom.AutoSize = true;
+            lbl_Nom.Location = new Point(161, 82);
+            lbl_Nom.Name = "lbl_Nom";
+            lbl_Nom.Size = new Size(34, 15);
+            lbl_Nom.TabIndex = 11;
+            lbl_Nom.Text = "Nom";
+            // 
+            // lbl_Prenom
+            // 
+            lbl_Prenom.AutoSize = true;
+            lbl_Prenom.Location = new Point(150, 23);
+            lbl_Prenom.Name = "lbl_Prenom";
+            lbl_Prenom.Size = new Size(49, 15);
+            lbl_Prenom.TabIndex = 10;
+            lbl_Prenom.Text = "Prenom";
+            // 
+            // pbx_Eleve
+            // 
+            pbx_Eleve.Location = new Point(21, 25);
+            pbx_Eleve.Name = "pbx_Eleve";
+            pbx_Eleve.Size = new Size(100, 50);
+            pbx_Eleve.TabIndex = 9;
+            pbx_Eleve.TabStop = false;
+            // 
+            // lbl_CodePermanent
+            // 
+            lbl_CodePermanent.AutoSize = true;
+            lbl_CodePermanent.Location = new Point(24, 119);
+            lbl_CodePermanent.Name = "lbl_CodePermanent";
+            lbl_CodePermanent.Size = new Size(96, 15);
+            lbl_CodePermanent.TabIndex = 8;
+            lbl_CodePermanent.Text = "Code permanent";
+            // 
+            // lbl_Age
+            // 
+            lbl_Age.AutoSize = true;
+            lbl_Age.Location = new Point(34, 182);
+            lbl_Age.Name = "lbl_Age";
+            lbl_Age.Size = new Size(28, 15);
+            lbl_Age.TabIndex = 7;
+            lbl_Age.Text = "Âge";
+            // 
+            // btn_Sauvegarder
+            // 
+            btn_Sauvegarder.Location = new Point(411, 195);
+            btn_Sauvegarder.Name = "btn_Sauvegarder";
+            btn_Sauvegarder.Size = new Size(91, 23);
+            btn_Sauvegarder.TabIndex = 6;
+            btn_Sauvegarder.Text = "Sauvegarder";
+            btn_Sauvegarder.UseVisualStyleBackColor = true;
+            // 
+            // btn_Effacer
+            // 
+            btn_Effacer.Location = new Point(311, 196);
+            btn_Effacer.Name = "btn_Effacer";
+            btn_Effacer.Size = new Size(75, 23);
+            btn_Effacer.TabIndex = 5;
+            btn_Effacer.Text = "Effacer";
+            btn_Effacer.UseVisualStyleBackColor = true;
             // 
             // tbx_age
             // 
@@ -362,230 +522,56 @@
             tbp_Cahier.Text = "Cahier de notes";
             tbp_Cahier.UseVisualStyleBackColor = true;
             // 
-            // btn_Effacer
+            // lbl_Echec_Reussi
             // 
-            btn_Effacer.Location = new Point(311, 196);
-            btn_Effacer.Name = "btn_Effacer";
-            btn_Effacer.Size = new Size(75, 23);
-            btn_Effacer.TabIndex = 5;
-            btn_Effacer.Text = "Effacer";
-            btn_Effacer.UseVisualStyleBackColor = true;
+            lbl_Echec_Reussi.AutoSize = true;
+            lbl_Echec_Reussi.Location = new Point(417, 225);
+            lbl_Echec_Reussi.Name = "lbl_Echec_Reussi";
+            lbl_Echec_Reussi.Size = new Size(110, 15);
+            lbl_Echec_Reussi.TabIndex = 34;
+            lbl_Echec_Reussi.Text = "Échec pour le cours";
             // 
-            // btn_Sauvegarder
+            // btn_SupprimerEtu
             // 
-            btn_Sauvegarder.Location = new Point(411, 195);
-            btn_Sauvegarder.Name = "btn_Sauvegarder";
-            btn_Sauvegarder.Size = new Size(91, 23);
-            btn_Sauvegarder.TabIndex = 6;
-            btn_Sauvegarder.Text = "Sauvegarder";
-            btn_Sauvegarder.UseVisualStyleBackColor = true;
+            btn_SupprimerEtu.Location = new Point(15, 214);
+            btn_SupprimerEtu.Name = "btn_SupprimerEtu";
+            btn_SupprimerEtu.Size = new Size(196, 23);
+            btn_SupprimerEtu.TabIndex = 33;
+            btn_SupprimerEtu.Text = "Supprimer un étudiant";
+            btn_SupprimerEtu.UseVisualStyleBackColor = true;
             // 
-            // lbl_Age
+            // lbx_Eleves
             // 
-            lbl_Age.AutoSize = true;
-            lbl_Age.Location = new Point(34, 182);
-            lbl_Age.Name = "lbl_Age";
-            lbl_Age.Size = new Size(28, 15);
-            lbl_Age.TabIndex = 7;
-            lbl_Age.Text = "Âge";
+            lbx_Eleves.FormattingEnabled = true;
+            lbx_Eleves.Location = new Point(13, 130);
+            lbx_Eleves.Name = "lbx_Eleves";
+            lbx_Eleves.Size = new Size(209, 64);
+            lbx_Eleves.TabIndex = 32;
             // 
-            // lbl_CodePermanent
+            // pbx_Cahier
             // 
-            lbl_CodePermanent.AutoSize = true;
-            lbl_CodePermanent.Location = new Point(24, 119);
-            lbl_CodePermanent.Name = "lbl_CodePermanent";
-            lbl_CodePermanent.Size = new Size(96, 15);
-            lbl_CodePermanent.TabIndex = 8;
-            lbl_CodePermanent.Text = "Code permanent";
+            pbx_Cahier.Location = new Point(13, 46);
+            pbx_Cahier.Name = "pbx_Cahier";
+            pbx_Cahier.Size = new Size(69, 77);
+            pbx_Cahier.TabIndex = 31;
+            pbx_Cahier.TabStop = false;
             // 
-            // pbx_Eleve
+            // rtb_Moyenne
             // 
-            pbx_Eleve.Location = new Point(21, 25);
-            pbx_Eleve.Name = "pbx_Eleve";
-            pbx_Eleve.Size = new Size(100, 50);
-            pbx_Eleve.TabIndex = 9;
-            pbx_Eleve.TabStop = false;
+            rtb_Moyenne.Location = new Point(107, 100);
+            rtb_Moyenne.Name = "rtb_Moyenne";
+            rtb_Moyenne.Size = new Size(104, 24);
+            rtb_Moyenne.TabIndex = 30;
+            rtb_Moyenne.Text = "";
             // 
-            // lbl_Prenom
+            // lbl_Moyenne
             // 
-            lbl_Prenom.AutoSize = true;
-            lbl_Prenom.Location = new Point(150, 23);
-            lbl_Prenom.Name = "lbl_Prenom";
-            lbl_Prenom.Size = new Size(49, 15);
-            lbl_Prenom.TabIndex = 10;
-            lbl_Prenom.Text = "Prenom";
-            // 
-            // lbl_Nom
-            // 
-            lbl_Nom.AutoSize = true;
-            lbl_Nom.Location = new Point(161, 82);
-            lbl_Nom.Name = "lbl_Nom";
-            lbl_Nom.Size = new Size(34, 15);
-            lbl_Nom.TabIndex = 11;
-            lbl_Nom.Text = "Nom";
-            // 
-            // lbl_DateNaissance
-            // 
-            lbl_DateNaissance.AutoSize = true;
-            lbl_DateNaissance.Location = new Point(153, 128);
-            lbl_DateNaissance.Name = "lbl_DateNaissance";
-            lbl_DateNaissance.Size = new Size(101, 15);
-            lbl_DateNaissance.TabIndex = 12;
-            lbl_DateNaissance.Text = "Date de naissance";
-            // 
-            // nud_Cours1
-            // 
-            nud_Cours1.Location = new Point(451, 31);
-            nud_Cours1.Name = "nud_Cours1";
-            nud_Cours1.Size = new Size(82, 23);
-            nud_Cours1.TabIndex = 13;
-            // 
-            // nud_Cours2
-            // 
-            nud_Cours2.Location = new Point(451, 73);
-            nud_Cours2.Name = "nud_Cours2";
-            nud_Cours2.Size = new Size(82, 23);
-            nud_Cours2.TabIndex = 14;
-            // 
-            // nud_Cours3
-            // 
-            nud_Cours3.Location = new Point(451, 103);
-            nud_Cours3.Name = "nud_Cours3";
-            nud_Cours3.Size = new Size(82, 23);
-            nud_Cours3.TabIndex = 15;
-            // 
-            // nud_Cours4
-            // 
-            nud_Cours4.Location = new Point(451, 133);
-            nud_Cours4.Name = "nud_Cours4";
-            nud_Cours4.Size = new Size(82, 23);
-            nud_Cours4.TabIndex = 16;
-            // 
-            // nud_Cours5
-            // 
-            nud_Cours5.Location = new Point(451, 161);
-            nud_Cours5.Name = "nud_Cours5";
-            nud_Cours5.Size = new Size(82, 23);
-            nud_Cours5.TabIndex = 17;
-            // 
-            // Résultats
-            // 
-            Résultats.AutoSize = true;
-            Résultats.Location = new Point(361, 13);
-            Résultats.Name = "Résultats";
-            Résultats.Size = new Size(54, 15);
-            Résultats.TabIndex = 18;
-            Résultats.Text = "Résultats";
-            // 
-            // tbx_CoursEtu1
-            // 
-            tbx_CoursEtu1.Location = new Point(331, 31);
-            tbx_CoursEtu1.Name = "tbx_CoursEtu1";
-            tbx_CoursEtu1.Size = new Size(100, 23);
-            tbx_CoursEtu1.TabIndex = 19;
-            // 
-            // tbx_CoursEtu2
-            // 
-            tbx_CoursEtu2.Location = new Point(331, 73);
-            tbx_CoursEtu2.Name = "tbx_CoursEtu2";
-            tbx_CoursEtu2.Size = new Size(100, 23);
-            tbx_CoursEtu2.TabIndex = 20;
-            // 
-            // tbx_CoursEtu3
-            // 
-            tbx_CoursEtu3.Location = new Point(331, 103);
-            tbx_CoursEtu3.Name = "tbx_CoursEtu3";
-            tbx_CoursEtu3.Size = new Size(100, 23);
-            tbx_CoursEtu3.TabIndex = 21;
-            // 
-            // tbx_CoursEtu4
-            // 
-            tbx_CoursEtu4.Location = new Point(331, 132);
-            tbx_CoursEtu4.Name = "tbx_CoursEtu4";
-            tbx_CoursEtu4.Size = new Size(100, 23);
-            tbx_CoursEtu4.TabIndex = 22;
-            // 
-            // tbx_CoursEtu5
-            // 
-            tbx_CoursEtu5.Location = new Point(331, 161);
-            tbx_CoursEtu5.Name = "tbx_CoursEtu5";
-            tbx_CoursEtu5.Size = new Size(100, 23);
-            tbx_CoursEtu5.TabIndex = 23;
-            // 
-            // rtb_Note1
-            // 
-            rtb_Note1.Location = new Point(450, 24);
-            rtb_Note1.Name = "rtb_Note1";
-            rtb_Note1.Size = new Size(47, 24);
-            rtb_Note1.TabIndex = 0;
-            rtb_Note1.Text = "";
-            // 
-            // rtb_Note2
-            // 
-            rtb_Note2.Location = new Point(450, 54);
-            rtb_Note2.Name = "rtb_Note2";
-            rtb_Note2.Size = new Size(47, 24);
-            rtb_Note2.TabIndex = 1;
-            rtb_Note2.Text = "";
-            // 
-            // rtb_Note3
-            // 
-            rtb_Note3.Location = new Point(450, 84);
-            rtb_Note3.Name = "rtb_Note3";
-            rtb_Note3.Size = new Size(47, 24);
-            rtb_Note3.TabIndex = 2;
-            rtb_Note3.Text = "";
-            // 
-            // rtb_Note4
-            // 
-            rtb_Note4.Location = new Point(450, 114);
-            rtb_Note4.Name = "rtb_Note4";
-            rtb_Note4.Size = new Size(47, 24);
-            rtb_Note4.TabIndex = 3;
-            rtb_Note4.Text = "";
-            // 
-            // rtb_Note5
-            // 
-            rtb_Note5.Location = new Point(450, 144);
-            rtb_Note5.Name = "rtb_Note5";
-            rtb_Note5.Size = new Size(47, 24);
-            rtb_Note5.TabIndex = 4;
-            rtb_Note5.Text = "";
-            // 
-            // lbl_Note
-            // 
-            lbl_Note.AutoSize = true;
-            lbl_Note.Location = new Point(450, 6);
-            lbl_Note.Name = "lbl_Note";
-            lbl_Note.Size = new Size(33, 15);
-            lbl_Note.TabIndex = 5;
-            lbl_Note.Text = "Note";
-            // 
-            // lbl_ResultatCahier
-            // 
-            lbl_ResultatCahier.AutoSize = true;
-            lbl_ResultatCahier.Location = new Point(329, 10);
-            lbl_ResultatCahier.Name = "lbl_ResultatCahier";
-            lbl_ResultatCahier.Size = new Size(54, 15);
-            lbl_ResultatCahier.TabIndex = 6;
-            lbl_ResultatCahier.Text = "Résultats";
-            // 
-            // lbl_NoteFinale
-            // 
-            lbl_NoteFinale.AutoSize = true;
-            lbl_NoteFinale.Location = new Point(329, 199);
-            lbl_NoteFinale.Name = "lbl_NoteFinale";
-            lbl_NoteFinale.Size = new Size(65, 15);
-            lbl_NoteFinale.TabIndex = 7;
-            lbl_NoteFinale.Text = "Note finale";
-            // 
-            // rtb_Finale
-            // 
-            rtb_Finale.Location = new Point(450, 190);
-            rtb_Finale.Name = "rtb_Finale";
-            rtb_Finale.Size = new Size(47, 24);
-            rtb_Finale.TabIndex = 9;
-            rtb_Finale.Text = "";
+            lbl_Moyenne.AutoSize = true;
+            lbl_Moyenne.Location = new Point(107, 70);
+            lbl_Moyenne.Name = "lbl_Moyenne";
+            lbl_Moyenne.Size = new Size(115, 15);
+            lbl_Moyenne.TabIndex = 29;
+            lbl_Moyenne.Text = "Moyenne du groupe";
             // 
             // tbx_EvalCahier5
             // 
@@ -622,56 +608,80 @@
             tbx_EvalCahier1.Size = new Size(100, 23);
             tbx_EvalCahier1.TabIndex = 24;
             // 
-            // lbl_Moyenne
+            // rtb_Finale
             // 
-            lbl_Moyenne.AutoSize = true;
-            lbl_Moyenne.Location = new Point(107, 70);
-            lbl_Moyenne.Name = "lbl_Moyenne";
-            lbl_Moyenne.Size = new Size(115, 15);
-            lbl_Moyenne.TabIndex = 29;
-            lbl_Moyenne.Text = "Moyenne du groupe";
+            rtb_Finale.Location = new Point(450, 190);
+            rtb_Finale.Name = "rtb_Finale";
+            rtb_Finale.Size = new Size(47, 24);
+            rtb_Finale.TabIndex = 9;
+            rtb_Finale.Text = "";
             // 
-            // rtb_Moyenne
+            // lbl_NoteFinale
             // 
-            rtb_Moyenne.Location = new Point(107, 100);
-            rtb_Moyenne.Name = "rtb_Moyenne";
-            rtb_Moyenne.Size = new Size(104, 24);
-            rtb_Moyenne.TabIndex = 30;
-            rtb_Moyenne.Text = "";
+            lbl_NoteFinale.AutoSize = true;
+            lbl_NoteFinale.Location = new Point(329, 199);
+            lbl_NoteFinale.Name = "lbl_NoteFinale";
+            lbl_NoteFinale.Size = new Size(65, 15);
+            lbl_NoteFinale.TabIndex = 7;
+            lbl_NoteFinale.Text = "Note finale";
             // 
-            // pbx_Cahier
+            // lbl_ResultatCahier
             // 
-            pbx_Cahier.Location = new Point(13, 46);
-            pbx_Cahier.Name = "pbx_Cahier";
-            pbx_Cahier.Size = new Size(69, 77);
-            pbx_Cahier.TabIndex = 31;
-            pbx_Cahier.TabStop = false;
+            lbl_ResultatCahier.AutoSize = true;
+            lbl_ResultatCahier.Location = new Point(329, 10);
+            lbl_ResultatCahier.Name = "lbl_ResultatCahier";
+            lbl_ResultatCahier.Size = new Size(54, 15);
+            lbl_ResultatCahier.TabIndex = 6;
+            lbl_ResultatCahier.Text = "Résultats";
             // 
-            // lbx_Eleves
+            // lbl_Note
             // 
-            lbx_Eleves.FormattingEnabled = true;
-            lbx_Eleves.Location = new Point(13, 130);
-            lbx_Eleves.Name = "lbx_Eleves";
-            lbx_Eleves.Size = new Size(209, 64);
-            lbx_Eleves.TabIndex = 32;
+            lbl_Note.AutoSize = true;
+            lbl_Note.Location = new Point(450, 6);
+            lbl_Note.Name = "lbl_Note";
+            lbl_Note.Size = new Size(33, 15);
+            lbl_Note.TabIndex = 5;
+            lbl_Note.Text = "Note";
             // 
-            // btn_SupprimerEtu
+            // rtb_Note5
             // 
-            btn_SupprimerEtu.Location = new Point(15, 214);
-            btn_SupprimerEtu.Name = "btn_SupprimerEtu";
-            btn_SupprimerEtu.Size = new Size(196, 23);
-            btn_SupprimerEtu.TabIndex = 33;
-            btn_SupprimerEtu.Text = "Supprimer un étudiant";
-            btn_SupprimerEtu.UseVisualStyleBackColor = true;
+            rtb_Note5.Location = new Point(450, 144);
+            rtb_Note5.Name = "rtb_Note5";
+            rtb_Note5.Size = new Size(47, 24);
+            rtb_Note5.TabIndex = 4;
+            rtb_Note5.Text = "";
             // 
-            // lbl_Echec_Reussi
+            // rtb_Note4
             // 
-            lbl_Echec_Reussi.AutoSize = true;
-            lbl_Echec_Reussi.Location = new Point(417, 225);
-            lbl_Echec_Reussi.Name = "lbl_Echec_Reussi";
-            lbl_Echec_Reussi.Size = new Size(110, 15);
-            lbl_Echec_Reussi.TabIndex = 34;
-            lbl_Echec_Reussi.Text = "Échec pour le cours";
+            rtb_Note4.Location = new Point(450, 114);
+            rtb_Note4.Name = "rtb_Note4";
+            rtb_Note4.Size = new Size(47, 24);
+            rtb_Note4.TabIndex = 3;
+            rtb_Note4.Text = "";
+            // 
+            // rtb_Note3
+            // 
+            rtb_Note3.Location = new Point(450, 84);
+            rtb_Note3.Name = "rtb_Note3";
+            rtb_Note3.Size = new Size(47, 24);
+            rtb_Note3.TabIndex = 2;
+            rtb_Note3.Text = "";
+            // 
+            // rtb_Note2
+            // 
+            rtb_Note2.Location = new Point(450, 54);
+            rtb_Note2.Name = "rtb_Note2";
+            rtb_Note2.Size = new Size(47, 24);
+            rtb_Note2.TabIndex = 1;
+            rtb_Note2.Text = "";
+            // 
+            // rtb_Note1
+            // 
+            rtb_Note1.Location = new Point(450, 24);
+            rtb_Note1.Name = "rtb_Note1";
+            rtb_Note1.Size = new Size(47, 24);
+            rtb_Note1.TabIndex = 0;
+            rtb_Note1.Text = "";
             // 
             // frm_Ecran
             // 
@@ -686,20 +696,21 @@
             Controls.Add(lbl_Choix_Cours);
             Name = "frm_Ecran";
             Text = "Collège - Charles Guernon";
+            Load += frm_Ecran_Load;
             tcl_Menu.ResumeLayout(false);
             tbp_Cours.ResumeLayout(false);
             tbp_Cours.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbx_Ecole).EndInit();
             tbp_Etudiant.ResumeLayout(false);
             tbp_Etudiant.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nud_Cours1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbx_Eleve).EndInit();
             tbp_Cahier.ResumeLayout(false);
             tbp_Cahier.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbx_Eleve).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nud_Cours5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbx_Cahier).EndInit();
             ResumeLayout(false);
             PerformLayout();
