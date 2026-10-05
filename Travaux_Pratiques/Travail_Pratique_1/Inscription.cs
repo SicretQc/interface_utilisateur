@@ -3,53 +3,74 @@ using System.Text;
 
 namespace Travail_Pratique_1
 {
-    internal class Inscription
+    public class Inscription
     {
-        private int NumInscription;
-        private int NumEtudiant;
-        private int NumCours;
-        private int[] Notes;
+        private static int _numInscription;
+        public static int NumInscription
+        {
+            get { return _numInscription; }
+        }
+        private int _numEtudiant;
+        public int NumEtudiant
+        {
+            get
+            {
+                return _numEtudiant;
+            }
+            set
+            {
+                _numEtudiant = Etudiant.NumEtudiant;
+            }
+        }
+        private int _numCours;
+        public int NumCours
+        {
+            get
+            {
+                return _numCours;
+            }
+            set
+            {
+                _numCours = Cours.NumCours;
+            }
+        }
+        private int[] _notes;
+        public int[] Notes
+        {
+            get { return _notes; }
+            set
+            {
+                for (int i = 0; i < value.Length; i++)
+                {
+                    if (value[i] >= 0 && value[i] <= 100)
+                    {
+                        _notes = value;
+                    }
+                }
+            }
+        }
 
-        public int numInscription
-        {
-            get { return NumInscription; }
-            set { NumInscription = value; }
-        }
-        public int numEtudiant
-        {
-            get { return NumEtudiant; }
-            set { NumEtudiant = value; }
-        }
-        public int numCours
-        {
-            get { return NumCours; }
-            set { NumCours = value; }
-        }
-        public int[] notes
-        {
-            get { return Notes; }
-            set { Notes = value; }
-        }
 
         public Inscription()
         {
-            NumInscription = 0;
-            NumEtudiant = 0;
-            NumCours = 0;
-            Notes = new int[0];
+            _numInscription++;
+            _notes = new int[5];
         }
 
-        public Inscription(int numInscription, int numEtudiant, int numCours, int[] notes)
+        public Inscription(int[] notes)
         {
-            NumInscription = numInscription;
-            NumEtudiant = numEtudiant;
-            NumCours = numCours;
-            Notes = notes;
+            _numInscription++;
+            _notes = notes;
         }
 
         public override string ToString()
         {
-            return "NumInscription:" + NumInscription + "\nNumEtudiant: " + NumEtudiant + "\nNumCours: " + NumCours;
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < _notes.Length; i++)
+            {
+                sb.Append("\nNote " + (i + 1) + ": " + _notes[i]);
+            }
+            return "NumInscription:" + _numInscription + "\nNumEtudiant: " + _numEtudiant + "\nNumCours: " + _numCours + sb.ToString();
         }
     }
 

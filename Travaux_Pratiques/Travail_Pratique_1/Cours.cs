@@ -3,63 +3,87 @@ using System.Text;
 
 namespace Travail_Pratique_1
 {
-    internal class Cours
+    public class Cours
     {
-        private static int NumCours = 0;
-
-        private string CodeCours;
-        private string Nom;
-        private string[] Evaluations;
-        private Inscription[] Inscriptions;
-        private int NombreEtudiants;
-
-        public string codeCours
+        private static int _numCours = 0;
+        public static int NumCours
         {
-            get { return CodeCours; }
-            set { CodeCours = value; }
+            get { return _numCours; }
         }
-        public string nom
+        private string _codeCours;
+        public string CodeCours
         {
-            get { return Nom; }
-            set { Nom = value; }
-        }
-
-        public string[] evaluations
-        {
-            get { return Evaluations; }
-            set { Evaluations = value; }
+            get { return _codeCours; }
+            set
+            { 
+                if(value.Length == 7)
+                {
+                    _codeCours = value;
+                }
+            } 
         }
 
-        public Inscription[] inscriptions
+        public string Nom { get; set; }
+        private string[] _evaluations;
+        public string[] Evaluations
         {
-            get { return Inscriptions; }
-            set { Inscriptions = value; }
+            get { return _evaluations; }
+            set
+            {
+                if (value.Length <= 5)
+                {
+                    _evaluations = value;
+                }
+            }
+        }
+
+        private Inscription[] _inscription;
+        public Inscription[] Inscription
+        {
+            get { return _inscription; }
+            set
+            {
+                if (AjouterInscription(Inscription[frm_Ecran.MAX_ETUDIANT]))
+                {
+                    _inscription = value;
+                }
+            }
         }
 
         public Cours()
         {
-            NumCours++;
-            CodeCours = "";
-            Nom = "";
-            Evaluations = new string[5];
-            Inscriptions = new Inscription[0];
-            NombreEtudiants = 0;
+            _numCours++;
+            _codeCours = string.Empty;
+            Nom = string.Empty;
+            _evaluations = new string[5];
+            _inscription = new Inscription[frm_Ecran.MAX_ETUDIANT];
         }
 
         public Cours(string codeCours, string nom)
         {
-            NumCours++;
-            CodeCours = codeCours;
+            _numCours++;
+            _codeCours = codeCours;
             Nom = nom;
-            Evaluations = new string[5];
-            Inscriptions = new Inscription[0];
-            NombreEtudiants = 0;
+            _evaluations = new string[5];
+            _inscription = new Inscription[frm_Ecran.MAX_ETUDIANT];
         }
 
         override
         public string ToString()
         {
-            return CodeCours + " - " + Nom;
+            return _codeCours + " - " + Nom;
+        }
+
+        private static Boolean AjouterInscription(Inscription inscription)
+        {
+            if(inscription.NumEtudiant == frm_Ecran.MAX_ETUDIANT)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

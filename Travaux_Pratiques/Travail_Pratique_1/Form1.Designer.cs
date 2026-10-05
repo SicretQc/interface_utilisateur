@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Ecran));
             lbl_Choix_Cours = new Label();
             cbx_Choix_Cours = new ComboBox();
             lbl_Nb_Etudiants = new Label();
@@ -116,6 +117,7 @@
             // 
             // cbx_Choix_Cours
             // 
+            cbx_Choix_Cours.DropDownStyle = ComboBoxStyle.DropDownList;
             cbx_Choix_Cours.FormattingEnabled = true;
             cbx_Choix_Cours.Location = new Point(355, 12);
             cbx_Choix_Cours.Name = "cbx_Choix_Cours";
@@ -253,7 +255,7 @@
             // 
             // lbl_Gestion
             // 
-            lbl_Gestion.Location = new Point(18, 113);
+            lbl_Gestion.Location = new Point(38, 164);
             lbl_Gestion.Name = "lbl_Gestion";
             lbl_Gestion.Size = new Size(184, 70);
             lbl_Gestion.TabIndex = 1;
@@ -262,9 +264,11 @@
             // 
             // pbx_Ecole
             // 
-            pbx_Ecole.Location = new Point(18, 25);
+            pbx_Ecole.BackgroundImage = (Image)resources.GetObject("pbx_Ecole.BackgroundImage");
+            pbx_Ecole.BackgroundImageLayout = ImageLayout.Stretch;
+            pbx_Ecole.Location = new Point(53, 16);
             pbx_Ecole.Name = "pbx_Ecole";
-            pbx_Ecole.Size = new Size(100, 50);
+            pbx_Ecole.Size = new Size(153, 145);
             pbx_Ecole.TabIndex = 0;
             pbx_Ecole.TabStop = false;
             // 
@@ -304,6 +308,7 @@
             // 
             // tbx_CoursEtu5
             // 
+            tbx_CoursEtu5.Enabled = false;
             tbx_CoursEtu5.Location = new Point(331, 161);
             tbx_CoursEtu5.Name = "tbx_CoursEtu5";
             tbx_CoursEtu5.Size = new Size(100, 23);
@@ -311,6 +316,7 @@
             // 
             // tbx_CoursEtu4
             // 
+            tbx_CoursEtu4.Enabled = false;
             tbx_CoursEtu4.Location = new Point(331, 132);
             tbx_CoursEtu4.Name = "tbx_CoursEtu4";
             tbx_CoursEtu4.Size = new Size(100, 23);
@@ -318,6 +324,7 @@
             // 
             // tbx_CoursEtu3
             // 
+            tbx_CoursEtu3.Enabled = false;
             tbx_CoursEtu3.Location = new Point(331, 103);
             tbx_CoursEtu3.Name = "tbx_CoursEtu3";
             tbx_CoursEtu3.Size = new Size(100, 23);
@@ -325,14 +332,16 @@
             // 
             // tbx_CoursEtu2
             // 
-            tbx_CoursEtu2.Location = new Point(331, 73);
+            tbx_CoursEtu2.Enabled = false;
+            tbx_CoursEtu2.Location = new Point(331, 74);
             tbx_CoursEtu2.Name = "tbx_CoursEtu2";
             tbx_CoursEtu2.Size = new Size(100, 23);
             tbx_CoursEtu2.TabIndex = 20;
             // 
             // tbx_CoursEtu1
             // 
-            tbx_CoursEtu1.Location = new Point(331, 31);
+            tbx_CoursEtu1.Enabled = false;
+            tbx_CoursEtu1.Location = new Point(331, 44);
             tbx_CoursEtu1.Name = "tbx_CoursEtu1";
             tbx_CoursEtu1.Size = new Size(100, 23);
             tbx_CoursEtu1.TabIndex = 19;
@@ -376,7 +385,7 @@
             // 
             // nud_Cours1
             // 
-            nud_Cours1.Location = new Point(451, 31);
+            nud_Cours1.Location = new Point(451, 44);
             nud_Cours1.Name = "nud_Cours1";
             nud_Cours1.Size = new Size(82, 23);
             nud_Cours1.TabIndex = 13;
@@ -410,9 +419,11 @@
             // 
             // pbx_Eleve
             // 
-            pbx_Eleve.Location = new Point(21, 25);
+            pbx_Eleve.BackgroundImage = (Image)resources.GetObject("pbx_Eleve.BackgroundImage");
+            pbx_Eleve.BackgroundImageLayout = ImageLayout.Stretch;
+            pbx_Eleve.Location = new Point(21, 13);
             pbx_Eleve.Name = "pbx_Eleve";
-            pbx_Eleve.Size = new Size(100, 50);
+            pbx_Eleve.Size = new Size(99, 103);
             pbx_Eleve.TabIndex = 9;
             pbx_Eleve.TabStop = false;
             // 
@@ -436,16 +447,17 @@
             // 
             // btn_Sauvegarder
             // 
-            btn_Sauvegarder.Location = new Point(411, 195);
+            btn_Sauvegarder.Location = new Point(442, 218);
             btn_Sauvegarder.Name = "btn_Sauvegarder";
             btn_Sauvegarder.Size = new Size(91, 23);
             btn_Sauvegarder.TabIndex = 6;
             btn_Sauvegarder.Text = "Sauvegarder";
             btn_Sauvegarder.UseVisualStyleBackColor = true;
+            btn_Sauvegarder.Click += btn_Sauvegarder_Click;
             // 
             // btn_Effacer
             // 
-            btn_Effacer.Location = new Point(311, 196);
+            btn_Effacer.Location = new Point(356, 218);
             btn_Effacer.Name = "btn_Effacer";
             btn_Effacer.Size = new Size(75, 23);
             btn_Effacer.TabIndex = 5;
@@ -454,6 +466,7 @@
             // 
             // tbx_age
             // 
+            tbx_age.Enabled = false;
             tbx_age.Location = new Point(27, 198);
             tbx_age.Name = "tbx_age";
             tbx_age.Size = new Size(100, 23);
@@ -470,6 +483,7 @@
             // 
             // dtx_Date_Naissance
             // 
+            dtx_Date_Naissance.Format = DateTimePickerFormat.Short;
             dtx_Date_Naissance.Location = new Point(150, 150);
             dtx_Date_Naissance.Name = "dtx_Date_Naissance";
             dtx_Date_Naissance.Size = new Size(123, 23);
@@ -696,6 +710,7 @@
             Controls.Add(lbl_Choix_Cours);
             Name = "frm_Ecran";
             Text = "Collège - Charles Guernon";
+            FormClosing += frm_Ecran_FormClosing;
             Load += frm_Ecran_Load;
             tcl_Menu.ResumeLayout(false);
             tbp_Cours.ResumeLayout(false);

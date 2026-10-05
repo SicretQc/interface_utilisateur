@@ -1,95 +1,79 @@
 ﻿using System;
 using System.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Travail_Pratique_1
 {
-    internal class Etudiant
+    public class Etudiant
     {
-        public const int MAX_ETUDIANT = 10;
-
-        public static int numEtudiant;
-        private string Prenom;
-        private string Nom;
-        private string DateNaissance;
-        private string CodePermanent;
-        private int age;
-
-        public int getNombreEtudiant()
+        private static int _numEtudiant = 0;
+        public static int NumEtudiant
         {
-            return numEtudiant;
+            get { return _numEtudiant; }
         }
-
-        public string prenom
+        public string Prenom { get; set; }
+        public string Nom { get; set; }
+        private string _dateNaissance;
+        public string DateNaissance
         {
-            get { return Prenom; }
-            set { Prenom = value; }
-        }
-
-        public string nom
-        {
-            get { return Nom; }
-            set { Nom = value; }
-        }
-
-        public string dateNaissance
-        {
-            get { return DateNaissance; }
+            get { return _dateNaissance; }
             set
             {
                 if (DateTime.TryParseExact(value, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out DateTime date))
                 {
-                    DateNaissance = value;
+                    _dateNaissance = value;
                 }
             }
         }
-
-        public string codePermanent
+        private string _codePermanent;
+        public string CodePermanent
         {
-            get { return CodePermanent; }
+            get { return _codePermanent; }
             set
             {
                 if (value == @"[a-zA-Z]{4}\d{6}")
                 {
-                    CodePermanent = value;
+                    _codePermanent = value;
                 }
             }
         }
-
+        private int _age;
         public int Age
         {
-            get { return CalculerAge(); }
+            get
+            {
+                return _age;
+            }
+            set
+            {
+                DateTime dateNaissance = DateTime.ParseExact(this._dateNaissance, "yyyy-MM-dd", null);
+                DateTime dateActuelle = DateTime.Now;
+                _age = dateActuelle.Year - dateNaissance.Year;
+            }
         }
 
         public Etudiant()
         {
-            numEtudiant++;
-            this.Prenom = "";
-            this.Nom = "";
-            this.DateNaissance = "";
-            this.CodePermanent = "";
+            _numEtudiant++;
+            Prenom = "";
+            Nom = "";
+            _dateNaissance = "";
+            _codePermanent = "";
         }
 
-        public Etudiant(int numEtudiant, string prenom, string nom, string dateNaissance, string codePermanent)
+        public Etudiant(string prenom, string nom, string dateNaissance, string codePermanent)
         {
-            numEtudiant++;
-            this.Prenom = prenom;
-            this.Nom = nom;
-            this.DateNaissance = dateNaissance;
-            this.CodePermanent = codePermanent;
-        }
-
-        private int CalculerAge()
-        {
-            DateTime dateNaissance = DateTime.ParseExact(this.DateNaissance, "yyyy-MM-dd", null);
-            DateTime dateActuelle = DateTime.Now;
-            age = dateActuelle.Year - dateNaissance.Year;
-            return age;
+            _numEtudiant++;
+            Prenom = "";
+            Nom = "";
+            _dateNaissance = "";
+            _codePermanent = "";
         }
 
         override
         public string ToString()
         {
-            return "Numéro d'étudiant:" + numEtudiant + "\nPrénom: " + Prenom + "\nNom: " + Nom + "\nDate de naissance: " + DateNaissance + "\nCode permanent: " + CodePermanent + "\nÂge: " + Age;
+            return Prenom + " " + Nom + " - " + _codePermanent;
         }
     }
 }
