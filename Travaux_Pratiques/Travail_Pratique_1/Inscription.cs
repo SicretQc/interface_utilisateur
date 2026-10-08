@@ -5,11 +5,7 @@ namespace Travail_Pratique_1
 {
     public class Inscription
     {
-        private static int _numInscription;
-        public static int NumInscription
-        {
-            get { return _numInscription; }
-        }
+        public static int NumInscription { get; set; }
         private int _numEtudiant;
         public int NumEtudiant
         {
@@ -53,13 +49,15 @@ namespace Travail_Pratique_1
 
         public Inscription()
         {
-            _numInscription++;
+            NumInscription++;
             _notes = new int[5];
         }
 
-        public Inscription(int[] notes)
+        public Inscription(int numEtudiant, int numCours, int[] notes)
         {
-            _numInscription++;
+            NumInscription++;
+            _numEtudiant = numEtudiant;
+            _numCours = numCours;
             _notes = notes;
         }
 
@@ -70,7 +68,7 @@ namespace Travail_Pratique_1
             {
                 sb.Append("\nNote " + (i + 1) + ": " + _notes[i]);
             }
-            return "NumInscription:" + _numInscription + "\nNumEtudiant: " + _numEtudiant + "\nNumCours: " + _numCours + sb.ToString();
+            return "NumInscription:" + NumInscription + "\nNumEtudiant: " + _numEtudiant + "\nNumCours: " + _numCours + sb.ToString();
         }
     }
 

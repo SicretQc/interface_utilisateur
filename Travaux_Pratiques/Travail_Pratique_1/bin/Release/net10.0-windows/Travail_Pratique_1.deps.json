@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Travail_Pratique_1/1.0.0": {
+        "runtime": {
+          "Travail_Pratique_1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Travail_Pratique_1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

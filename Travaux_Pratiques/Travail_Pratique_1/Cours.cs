@@ -9,6 +9,7 @@ namespace Travail_Pratique_1
         public static int NumCours
         {
             get { return _numCours; }
+            set { _numCours = value; }
         }
         private string _codeCours;
         public string CodeCours

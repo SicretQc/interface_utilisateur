@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Ecran));
             lbl_Choix_Cours = new Label();
             cbx_Choix_Cours = new ComboBox();
@@ -74,7 +75,7 @@
             tbp_Cahier = new TabPage();
             lbl_Echec_Reussi = new Label();
             btn_SupprimerEtu = new Button();
-            lbx_Eleves = new ListBox();
+            lbx_Etudiant = new ListBox();
             pbx_Cahier = new PictureBox();
             rtb_Moyenne = new RichTextBox();
             lbl_Moyenne = new Label();
@@ -92,6 +93,9 @@
             rtb_Note3 = new RichTextBox();
             rtb_Note2 = new RichTextBox();
             rtb_Note1 = new RichTextBox();
+            errorProvider1 = new ErrorProvider(components);
+            errorProvider2 = new ErrorProvider(components);
+            errorProvider3 = new ErrorProvider(components);
             tcl_Menu.SuspendLayout();
             tbp_Cours.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbx_Ecole).BeginInit();
@@ -104,6 +108,9 @@
             ((System.ComponentModel.ISupportInitialize)pbx_Eleve).BeginInit();
             tbp_Cahier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbx_Cahier).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
             SuspendLayout();
             // 
             // lbl_Choix_Cours
@@ -207,7 +214,7 @@
             // tbx_Eval5
             // 
             tbx_Eval5.Enabled = false;
-            tbx_Eval5.Location = new Point(412, 160);
+            tbx_Eval5.Location = new Point(410, 160);
             tbx_Eval5.Name = "tbx_Eval5";
             tbx_Eval5.Size = new Size(100, 23);
             tbx_Eval5.TabIndex = 7;
@@ -447,6 +454,7 @@
             // 
             // btn_Sauvegarder
             // 
+            btn_Sauvegarder.Enabled = false;
             btn_Sauvegarder.Location = new Point(442, 218);
             btn_Sauvegarder.Name = "btn_Sauvegarder";
             btn_Sauvegarder.Size = new Size(91, 23);
@@ -463,6 +471,7 @@
             btn_Effacer.TabIndex = 5;
             btn_Effacer.Text = "Effacer";
             btn_Effacer.UseVisualStyleBackColor = true;
+            btn_Effacer.Click += btn_Effacer_Click;
             // 
             // tbx_age
             // 
@@ -471,6 +480,7 @@
             tbx_age.Name = "tbx_age";
             tbx_age.Size = new Size(100, 23);
             tbx_age.TabIndex = 4;
+            tbx_age.Text = "0";
             // 
             // tbx_Code_Permanent
             // 
@@ -488,6 +498,7 @@
             dtx_Date_Naissance.Name = "dtx_Date_Naissance";
             dtx_Date_Naissance.Size = new Size(123, 23);
             dtx_Date_Naissance.TabIndex = 2;
+            dtx_Date_Naissance.Value = new DateTime(2026, 10, 7, 9, 0, 39, 0);
             dtx_Date_Naissance.ValueChanged += dtx_Date_Naissance_ValueChanged;
             // 
             // tbx_Nom_Etudiant
@@ -510,7 +521,7 @@
             // 
             tbp_Cahier.Controls.Add(lbl_Echec_Reussi);
             tbp_Cahier.Controls.Add(btn_SupprimerEtu);
-            tbp_Cahier.Controls.Add(lbx_Eleves);
+            tbp_Cahier.Controls.Add(lbx_Etudiant);
             tbp_Cahier.Controls.Add(pbx_Cahier);
             tbp_Cahier.Controls.Add(rtb_Moyenne);
             tbp_Cahier.Controls.Add(lbl_Moyenne);
@@ -544,6 +555,7 @@
             lbl_Echec_Reussi.Size = new Size(110, 15);
             lbl_Echec_Reussi.TabIndex = 34;
             lbl_Echec_Reussi.Text = "Échec pour le cours";
+            lbl_Echec_Reussi.Visible = false;
             // 
             // btn_SupprimerEtu
             // 
@@ -553,28 +565,33 @@
             btn_SupprimerEtu.TabIndex = 33;
             btn_SupprimerEtu.Text = "Supprimer un étudiant";
             btn_SupprimerEtu.UseVisualStyleBackColor = true;
+            btn_SupprimerEtu.Click += btn_SupprimerEtu_Click;
             // 
-            // lbx_Eleves
+            // lbx_Etudiant
             // 
-            lbx_Eleves.FormattingEnabled = true;
-            lbx_Eleves.Location = new Point(13, 130);
-            lbx_Eleves.Name = "lbx_Eleves";
-            lbx_Eleves.Size = new Size(209, 64);
-            lbx_Eleves.TabIndex = 32;
+            lbx_Etudiant.FormattingEnabled = true;
+            lbx_Etudiant.Location = new Point(13, 130);
+            lbx_Etudiant.Name = "lbx_Etudiant";
+            lbx_Etudiant.Size = new Size(209, 64);
+            lbx_Etudiant.TabIndex = 32;
+            lbx_Etudiant.SelectedIndexChanged += lbx_Etudiant_SelectedIndexChanged;
             // 
             // pbx_Cahier
             // 
-            pbx_Cahier.Location = new Point(13, 46);
+            pbx_Cahier.BackgroundImage = (Image)resources.GetObject("pbx_Cahier.BackgroundImage");
+            pbx_Cahier.BackgroundImageLayout = ImageLayout.Stretch;
+            pbx_Cahier.Location = new Point(13, 10);
             pbx_Cahier.Name = "pbx_Cahier";
-            pbx_Cahier.Size = new Size(69, 77);
+            pbx_Cahier.Size = new Size(88, 113);
             pbx_Cahier.TabIndex = 31;
             pbx_Cahier.TabStop = false;
             // 
             // rtb_Moyenne
             // 
+            rtb_Moyenne.Enabled = false;
             rtb_Moyenne.Location = new Point(107, 100);
             rtb_Moyenne.Name = "rtb_Moyenne";
-            rtb_Moyenne.Size = new Size(104, 24);
+            rtb_Moyenne.Size = new Size(115, 24);
             rtb_Moyenne.TabIndex = 30;
             rtb_Moyenne.Text = "";
             // 
@@ -589,42 +606,48 @@
             // 
             // tbx_EvalCahier5
             // 
-            tbx_EvalCahier5.Location = new Point(314, 158);
+            tbx_EvalCahier5.Enabled = false;
+            tbx_EvalCahier5.Location = new Point(309, 146);
             tbx_EvalCahier5.Name = "tbx_EvalCahier5";
             tbx_EvalCahier5.Size = new Size(100, 23);
             tbx_EvalCahier5.TabIndex = 28;
             // 
             // tbx_EvalCahier4
             // 
-            tbx_EvalCahier4.Location = new Point(314, 129);
+            tbx_EvalCahier4.Enabled = false;
+            tbx_EvalCahier4.Location = new Point(309, 117);
             tbx_EvalCahier4.Name = "tbx_EvalCahier4";
             tbx_EvalCahier4.Size = new Size(100, 23);
             tbx_EvalCahier4.TabIndex = 27;
             // 
             // tbx_EvalCahier3
             // 
-            tbx_EvalCahier3.Location = new Point(314, 100);
+            tbx_EvalCahier3.Enabled = false;
+            tbx_EvalCahier3.Location = new Point(309, 88);
             tbx_EvalCahier3.Name = "tbx_EvalCahier3";
             tbx_EvalCahier3.Size = new Size(100, 23);
             tbx_EvalCahier3.TabIndex = 26;
             // 
             // tbx_EvalCahier2
             // 
-            tbx_EvalCahier2.Location = new Point(314, 70);
+            tbx_EvalCahier2.Enabled = false;
+            tbx_EvalCahier2.Location = new Point(309, 58);
             tbx_EvalCahier2.Name = "tbx_EvalCahier2";
             tbx_EvalCahier2.Size = new Size(100, 23);
             tbx_EvalCahier2.TabIndex = 25;
             // 
             // tbx_EvalCahier1
             // 
-            tbx_EvalCahier1.Location = new Point(314, 28);
+            tbx_EvalCahier1.Enabled = false;
+            tbx_EvalCahier1.Location = new Point(309, 28);
             tbx_EvalCahier1.Name = "tbx_EvalCahier1";
             tbx_EvalCahier1.Size = new Size(100, 23);
             tbx_EvalCahier1.TabIndex = 24;
             // 
             // rtb_Finale
             // 
-            rtb_Finale.Location = new Point(450, 190);
+            rtb_Finale.Enabled = false;
+            rtb_Finale.Location = new Point(445, 196);
             rtb_Finale.Name = "rtb_Finale";
             rtb_Finale.Size = new Size(47, 24);
             rtb_Finale.TabIndex = 9;
@@ -633,7 +656,7 @@
             // lbl_NoteFinale
             // 
             lbl_NoteFinale.AutoSize = true;
-            lbl_NoteFinale.Location = new Point(329, 199);
+            lbl_NoteFinale.Location = new Point(344, 199);
             lbl_NoteFinale.Name = "lbl_NoteFinale";
             lbl_NoteFinale.Size = new Size(65, 15);
             lbl_NoteFinale.TabIndex = 7;
@@ -659,7 +682,8 @@
             // 
             // rtb_Note5
             // 
-            rtb_Note5.Location = new Point(450, 144);
+            rtb_Note5.Enabled = false;
+            rtb_Note5.Location = new Point(445, 146);
             rtb_Note5.Name = "rtb_Note5";
             rtb_Note5.Size = new Size(47, 24);
             rtb_Note5.TabIndex = 4;
@@ -667,7 +691,8 @@
             // 
             // rtb_Note4
             // 
-            rtb_Note4.Location = new Point(450, 114);
+            rtb_Note4.Enabled = false;
+            rtb_Note4.Location = new Point(445, 116);
             rtb_Note4.Name = "rtb_Note4";
             rtb_Note4.Size = new Size(47, 24);
             rtb_Note4.TabIndex = 3;
@@ -675,7 +700,8 @@
             // 
             // rtb_Note3
             // 
-            rtb_Note3.Location = new Point(450, 84);
+            rtb_Note3.Enabled = false;
+            rtb_Note3.Location = new Point(445, 88);
             rtb_Note3.Name = "rtb_Note3";
             rtb_Note3.Size = new Size(47, 24);
             rtb_Note3.TabIndex = 2;
@@ -683,7 +709,8 @@
             // 
             // rtb_Note2
             // 
-            rtb_Note2.Location = new Point(450, 54);
+            rtb_Note2.Enabled = false;
+            rtb_Note2.Location = new Point(445, 58);
             rtb_Note2.Name = "rtb_Note2";
             rtb_Note2.Size = new Size(47, 24);
             rtb_Note2.TabIndex = 1;
@@ -691,11 +718,24 @@
             // 
             // rtb_Note1
             // 
-            rtb_Note1.Location = new Point(450, 24);
+            rtb_Note1.Enabled = false;
+            rtb_Note1.Location = new Point(445, 28);
             rtb_Note1.Name = "rtb_Note1";
             rtb_Note1.Size = new Size(47, 24);
             rtb_Note1.TabIndex = 0;
             rtb_Note1.Text = "";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            errorProvider3.ContainerControl = this;
             // 
             // frm_Ecran
             // 
@@ -727,6 +767,9 @@
             tbp_Cahier.ResumeLayout(false);
             tbp_Cahier.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbx_Cahier).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -794,11 +837,14 @@
         private TextBox tbx_EvalCahier3;
         private TextBox tbx_EvalCahier2;
         private TextBox tbx_EvalCahier1;
-        private ListBox lbx_Eleves;
+        private ListBox lbx_Etudiant;
         private PictureBox pbx_Cahier;
         private RichTextBox rtb_Moyenne;
         private Label lbl_Moyenne;
         private Label lbl_Echec_Reussi;
         private Button btn_SupprimerEtu;
+        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider2;
+        private ErrorProvider errorProvider3;
     }
 }

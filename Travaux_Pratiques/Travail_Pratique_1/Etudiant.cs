@@ -9,7 +9,8 @@ namespace Travail_Pratique_1
         private static int _numEtudiant = 0;
         public static int NumEtudiant
         {
-            get { return _numEtudiant; }
+            get { return _numEtudiant; } 
+            set {_numEtudiant = value;}
         }
         public string Prenom { get; set; }
         public string Nom { get; set; }
@@ -64,10 +65,10 @@ namespace Travail_Pratique_1
         public Etudiant(string prenom, string nom, string dateNaissance, string codePermanent)
         {
             _numEtudiant++;
-            Prenom = "";
-            Nom = "";
-            _dateNaissance = "";
-            _codePermanent = "";
+            Prenom = prenom;
+            Nom = nom;
+            _dateNaissance = dateNaissance;
+            _codePermanent = codePermanent;
         }
 
         override
